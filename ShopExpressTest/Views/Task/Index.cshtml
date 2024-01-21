@@ -1,0 +1,49 @@
+﻿@model ShopExpressTest.Models.UserTaskVm;
+
+@{
+    ViewData["Title"] = "Tasks";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/taskStyle.css"/>
+    <script src="~/js/updateTaskList.js"></script>
+    <script src="~/js/pageStart.js"></script>
+    <script src="~/js/toggleBadge.js"></script>
+    <script src="~/js/Commands/completeTask.js"></script>
+    <script src="~/js/Commands/deleteTask.js"></script>
+    <script src="~/js/Commands/getTasksList.js"></script>
+    <script src="~/js/Commands/createTask.js"></script>
+    <script src="~/js/filter/filterScript.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <h1>To do List</h1>
+    </header>
+    <form>
+        <input type="text" class="todo-inputs" id="input-box" placeholder="add your tasks">
+        <button type="button" class="todo-button" onclick="createTask($('#input-box').val())">
+            <i class='bx bx-plus'></i>
+        </button>
+
+        <div class="select">
+            <select name="todos" class="filter-todos" onchange="filterTodo(event)">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="uncompleted">Uncompleted</option>
+            </select>
+        </div>
+    </form>
+    <div class="todo-container">
+        <ul class="todo-list" id="task-list"></ul>
+    </div>
+</body>
+
+
+
+
+
+
+    
